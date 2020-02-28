@@ -2,7 +2,7 @@
   "name": "std-algo",
   "version": "0.0.1",
   "description": "Standard algorithms and data structures for JavaScript",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/zwliew/std-algo",
   "author": "Zhao Wei Liew <zhaoweiliew@gmail.com>",
   "license": "MIT",
