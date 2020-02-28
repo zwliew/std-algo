@@ -5,11 +5,12 @@ Standard algorithms and data structures for JavaScript.
 ## What's implemented:
 
 - [Array algorithms](lib/algorithm/array.ts)
-- [Doubly-linked list](lib/list/list.ts)
+- [Doubly-linked list](lib/list)
+- [Stack](lib/stack)
+- [Deque](lib/queue/deque)
+- [Queue](lib/queue)
 
 ## To-do:
 
-- Queue
-- Deque
 - Binary search
 - Heap

@@ -2,4 +2,4 @@
 
 This directory contains:
 
-- Doubly-linked list (list.ts)
+- [Doubly-linked list](list.ts)

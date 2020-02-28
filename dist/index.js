@@ -2,5 +2,9 @@
 exports.__esModule = true;
 var queue_1 = require("./queue");
 exports.Queue = queue_1.Queue;
+exports.ArrayDeque = queue_1.ArrayDeque;
+exports.Deque = queue_1.Deque;
 var list_1 = require("./list");
 exports.List = list_1.List;
+var stack_1 = require("./stack");
+exports.Stack = stack_1.Stack;

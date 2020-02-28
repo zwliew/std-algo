@@ -1,4 +1,5 @@
-import { Queue } from './queue';
+import { Queue, ArrayDeque, Deque } from './queue';
 import { List } from './list';
+import { Stack } from './stack';
 
-export { Queue, List };
+export { Queue, ArrayDeque, Deque, List, Stack };
