@@ -14,3 +14,4 @@ Standard algorithms and data structures for JavaScript.
 
 - Binary search
 - Heap
+- Quickselect
