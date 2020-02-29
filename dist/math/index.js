@@ -10,5 +10,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (!exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 }
 exports.__esModule = true;
-__exportStar(require("./queue"), exports);
-__exportStar(require("./deque"), exports);
+__exportStar(require("./random"), exports);
