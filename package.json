@@ -10,7 +10,7 @@
     "build": "rimraf ./dist && tsc"
   },
   "devDependencies": {
-    "rimraf": "^3.0.2",
-    "typescript": "^3.9.0-dev.20200228"
+    "rimraf": "3.0.2",
+    "typescript": "3.9.0-dev.20200228"
   }
 }
