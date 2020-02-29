@@ -1,4 +1,4 @@
-# Algorithm
+# Array algorithms
 
 This directory contains:
 

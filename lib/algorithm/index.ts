@@ -1,3 +1,1 @@
-import { count, countIf } from './array';
-
-export { count, countIf };
+export * from './array';
