@@ -10,8 +10,11 @@ Standard algorithms and data structures for JavaScript.
 - [Deque](lib/queue/deque)
 - [Queue](lib/queue)
 - [Binary search](lib/algorithm/array/search.ts)
+- [Quickselect](lib/algorithm/array/select.ts)
+- [Random number generators](lib/math/random.ts)
 
 ## To-do:
 
 - Heap
-- Quickselect
+- Binary search tree
+- Better selection algorithm (quickselect as quadratic worst-case time complexity)

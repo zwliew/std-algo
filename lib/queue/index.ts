@@ -1,4 +1,2 @@
-import Queue from './queue';
-import { ArrayDeque, Deque } from './deque';
-
-export { Queue, ArrayDeque, Deque };
+export * from './queue';
+export * from './deque';
