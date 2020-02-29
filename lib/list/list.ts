@@ -1,9 +1,9 @@
 class Node {
-  next: Node;
-  prev: Node;
+  next: Node | null;
+  prev: Node | null;
   item: any;
 
-  constructor(prev, item, next) {
+  constructor(prev: Node | null, item: any, next: Node | null) {
     this.item = item;
     this.next = next;
     this.prev = prev;
@@ -12,8 +12,8 @@ class Node {
 
 class List {
   size: number = 0;
-  front: Node = null;
-  back: Node = null;
+  front: Node | null = null;
+  back: Node | null = null;
 
   empty(): boolean {
     return this.size === 0;
@@ -91,7 +91,7 @@ class List {
     this.size = 0;
   }
 
-  insertBefore(node: Node, item: any) {
+  insertBefore(node: Node | null, item: any) {
     if (node === null) {
       throw Error("Can't insert before a null node");
     }
@@ -116,8 +116,13 @@ class List {
       return;
     }
 
+    if (idx === 0) {
+      this.pushFront(item);
+      return;
+    }
+
     let x = this.front;
-    for (; idx > 0; --idx, x = x.next);
+    for (; idx > 0; --idx, x = x?.next || null);
     this.insertBefore(x, item);
   }
 }

@@ -110,8 +110,12 @@ var List = /** @class */ (function () {
             this.pushBack(item);
             return;
         }
+        if (idx === 0) {
+            this.pushFront(item);
+            return;
+        }
         var x = this.front;
-        for (; idx > 0; --idx, x = x.next)
+        for (; idx > 0; --idx, x = (x === null || x === void 0 ? void 0 : x.next) || null)
             ;
         this.insertBefore(x, item);
     };

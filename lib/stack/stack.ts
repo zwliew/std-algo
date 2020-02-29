@@ -1,5 +1,5 @@
 export default class Stack {
-  private arr = [];
+  private arr: any[] = [];
 
   push(item: any) {
     this.arr.push(item);
