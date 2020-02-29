@@ -1,5 +1,7 @@
 # std-algo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zwliew/std-algo.svg)](https://greenkeeper.io/)
+
 Standard algorithms and data structures for JavaScript.
 
 ## What's implemented:
