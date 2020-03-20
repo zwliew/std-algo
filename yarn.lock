@@ -3967,10 +3967,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@3.9.0-dev.20200308:
-  version "3.9.0-dev.20200308"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200308.tgz#df4b140b7d0d07464b858e8ccc199ba29a0f9393"
-  integrity sha512-xL7yV4VFYRa+az3MHNg9gsz/UmJf39LQ7O1ijXjFx19RnW6YzOCSkyOciN47VMU2lKsvQ7OAT5fAUrfDB0Th0Q==
+typescript@3.9.0-dev.20200320:
+  version "3.9.0-dev.20200320"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200320.tgz#dd301094e8a41f24045667618aac0390eff906a5"
+  integrity sha512-8/qGTnwO6m4LXMGN7wFFeWgrmmW68DF53X0V4surWQQwy5ymKcYxpuK8GZ5Du8feINvU3IzektlmRilVSwBDUw==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
