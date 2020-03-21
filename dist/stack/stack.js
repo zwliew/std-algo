@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var Stack = /** @class */ (function () {
+var Stack = (function () {
     function Stack() {
         this.arr = [];
     }

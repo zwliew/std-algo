@@ -21,15 +21,6 @@ function partition(arr, lo, hi, pivotIdx) {
     arr[hi] = tmp;
     return storeIdx;
 }
-/**
- * Returns the element at index n if the array were sorted.
- * This also rearranges the elements in the specified array such that:
- * - The element at index n is changed to the nth element if the array were sorted.
- * - All elements before index n are less than or equal to the elements after index n.
- * @param {any[]} arr The array that contains the element to be selected.
- * @param {number} n The index of the element to be selected.
- * @return {any} The nth element if the array were sorted.
- */
 function nthElement(arr, n) {
     var lo = 0;
     var hi = arr.length - 1;

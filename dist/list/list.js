@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var Node = /** @class */ (function () {
+var Node = (function () {
     function Node(prev, item, next) {
         this.item = item;
         this.next = next;
@@ -8,7 +8,7 @@ var Node = /** @class */ (function () {
     }
     return Node;
 }());
-var List = /** @class */ (function () {
+var List = (function () {
     function List() {
         this.size = 0;
         this.front = null;

@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 var deque_1 = require("./deque");
-var Queue = /** @class */ (function () {
+var Queue = (function () {
     function Queue() {
         this.deque = new deque_1.Deque();
     }

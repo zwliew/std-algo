@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var ArrayDeque = /** @class */ (function () {
+var ArrayDeque = (function () {
     function ArrayDeque() {
         this.arr = new Array(16);
         this.front = -1;

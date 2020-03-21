@@ -11,3 +11,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 }
 exports.__esModule = true;
 __exportStar(require("./random"), exports);
+__exportStar(require("./pow"), exports);

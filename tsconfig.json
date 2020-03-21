@@ -2,7 +2,8 @@
   "compilerOptions": {
     "outDir": "./dist",
     "lib": ["ESNext"],
-    "strict": true
+    "strict": true,
+    "removeComments": true
   },
   "exclude": ["**/*.test.ts"]
 }
