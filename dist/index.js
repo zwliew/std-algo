@@ -12,5 +12,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 exports.__esModule = true;
 __exportStar(require("./queue"), exports);
 __exportStar(require("./list"), exports);
+__exportStar(require("./stack"), exports);
 __exportStar(require("./algorithm"), exports);
 __exportStar(require("./math"), exports);

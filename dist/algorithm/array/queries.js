@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.countIf = exports.count = void 0;
 function count(arr, val) {
     var count = 0;
     for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {

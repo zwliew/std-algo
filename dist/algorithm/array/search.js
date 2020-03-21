@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.equalRange = exports.upperBound = exports.lowerBound = exports.binarySearch = void 0;
 function binarySearch(arr, val, comp) {
     var lo = 0;
     var hi = arr.length - 1;

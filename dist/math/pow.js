@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.pow = void 0;
 function pow(base, exp, mod) {
     if (!mod) {
         return Math.pow(base, exp);
