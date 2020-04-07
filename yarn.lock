@@ -4047,10 +4047,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@3.9.0-dev.20200320:
-  version "3.9.0-dev.20200320"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200320.tgz#dd301094e8a41f24045667618aac0390eff906a5"
-  integrity sha512-8/qGTnwO6m4LXMGN7wFFeWgrmmW68DF53X0V4surWQQwy5ymKcYxpuK8GZ5Du8feINvU3IzektlmRilVSwBDUw==
+typescript@3.9.0-dev.20200407:
+  version "3.9.0-dev.20200407"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200407.tgz#6f11737b42308f601bd6a1f0b9a40be7f8e55714"
+  integrity sha512-DCGwu+3goRNUl9J3kYqs4gAsUIdLIb9vWSoPalapEt8gezvrRChowBCPXApsfpiY91iqcEHFN+afhFe5dX6pWw==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
