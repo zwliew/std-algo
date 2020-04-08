@@ -8,14 +8,14 @@ function pow(base, exp, mod) {
     if (exp < 0 && mod) {
         throw Error('Cannot exponentiate with negative exponents while taking modulo.');
     }
-    if (!exp) {
-        return 1;
-    }
     base %= mod;
-    var ret = pow(base, exp >> 1, mod);
-    ret = Math.pow(ret, 2) % mod;
-    if (exp & 1) {
-        ret = (ret * base) % mod;
+    var ret = 1;
+    while (exp) {
+        if (exp & 1) {
+            ret = (ret * base) % mod;
+        }
+        exp >>= 1;
+        base = Math.pow(base, 2) % mod;
     }
     return ret;
 }
