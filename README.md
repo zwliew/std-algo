@@ -12,6 +12,9 @@ Standard algorithms and data structures for JavaScript.
 - [Binary search](lib/algorithm/array/search.ts)
 - [Quickselect](lib/algorithm/array/select.ts)
 - [Random number generators](lib/math/random.ts)
+- [Modular exponentation](lib/math/pow.ts)
+- [Computational geometry](lib/math/geometry.ts)
+- [Greatest common divisor and least common multiple](lib/math/numeric.ts)
 
 ## To-do:
 

@@ -1,9 +1,12 @@
 /**
- * Returns the base to the power exp.
+ * Returns the `base` to the power `exp`.
  * If mod is defined, return base to the power exp modulo mod.
+ *
  * @param base {number} The base number.
  * @param exp {number} The exponent used to raise the base.
  * @param mod {number|undefined} The modulo number.
+ *
+ * @returns {number} The result of `base` brought to the `exp` power (modulo `mod`).
  */
 export function pow(
   base: number,
