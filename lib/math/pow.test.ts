@@ -6,6 +6,7 @@ test('pow returns the correct value', () => {
     [3, 1237, 4, 3],
     [91, 5, 0, 6240321451],
     [81, 4, 1, 0],
+    [100, 0, 100, 1],
   ];
   for (let [base, exp, mod, res] of CASES) {
     expect(pow(base, exp, mod)).toEqual(res);

@@ -21,17 +21,14 @@ export function pow(
     );
   }
 
-  if (!exp) {
-    return 1;
-  }
-
-  // TODO: Maybe do this iteratively to avoid creating a recursion stack?
-  //       Not sure how much this impacts performance or memory usage in practice.
   base %= mod;
-  let ret = pow(base, exp >> 1, mod);
-  ret = ret ** 2 % mod;
-  if (exp & 1) {
-    ret = (ret * base) % mod;
+  let ret = 1;
+  while (exp) {
+    if (exp & 1) {
+      ret = (ret * base) % mod;
+    }
+    exp >>= 1;
+    base = base ** 2 % mod;
   }
   return ret;
 }
