@@ -6,3 +6,4 @@ This directory contains:
 - [Modular exponentation](pow.ts)
 - [Computational geometry](geometry.ts)
 - [Greatest common divisor and least common multiple](lib/math/numeric.ts)
+- [Constants](constants.ts)
