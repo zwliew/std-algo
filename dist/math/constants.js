@@ -1,0 +1,6 @@
+"use strict";
+exports.__esModule = true;
+exports.e = exports.tau = exports.pi = void 0;
+exports.pi = 3.141592653589793238462643383279502884197;
+exports.tau = 6.283185307179586476925286766559005768394;
+exports.e = 2.718281828459045235360287471352662497757;

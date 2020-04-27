@@ -1,6 +1,6 @@
 {
   "name": "std-algo",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Standard algorithms and data structures for JavaScript",
   "main": "dist/index.js",
   "files": [
