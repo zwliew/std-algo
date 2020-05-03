@@ -9,6 +9,7 @@ Standard algorithms and data structures for JavaScript.
 - [Stack](lib/stack)
 - [Deque](lib/queue/deque)
 - [Queue](lib/queue)
+- [Monotonic queue](lib/queue/monoQueue.ts)
 - [Binary search](lib/algorithm/array/search.ts)
 - [Quickselect](lib/algorithm/array/select.ts)
 - [Random number generators](lib/math/random.ts)
