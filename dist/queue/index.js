@@ -12,3 +12,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 exports.__esModule = true;
 __exportStar(require("./queue"), exports);
 __exportStar(require("./deque"), exports);
+__exportStar(require("./monoQueue"), exports);

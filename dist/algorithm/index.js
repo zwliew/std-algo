@@ -11,3 +11,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 }
 exports.__esModule = true;
 __exportStar(require("./array"), exports);
+__exportStar(require("./algorithm"), exports);
