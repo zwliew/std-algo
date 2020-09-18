@@ -7,11 +7,9 @@
  * @returns {number} The greatest common divisor of integers `a` and `b`.
  */
 export function gcd(a: number, b: number): number {
-  let tmp;
   while (b) {
-    tmp = a % b;
-    a = b;
-    b = tmp;
+    a = a % b;
+    [a, b] = [b, a];
   }
   return a;
 }

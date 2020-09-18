@@ -1,14 +1,14 @@
 import { Deque } from "./deque";
 
-export class MonoQueue {
+export class MonoQueue<T> {
   private deque = new Deque();
-  private cmp: (x: any, y: any) => boolean;
+  private cmp: (x: T, y: T) => boolean;
 
-  constructor(cmp: (x: any, y: any) => boolean) {
+  constructor(cmp: (x: T, y: T) => boolean) {
     this.cmp = cmp;
   }
 
-  push(value: any) {
+  push(value: T) {
     let count = 1;
     while (!this.deque.empty() && this.cmp(this.deque.getBack().value, value)) {
       count += this.deque.popBack().count;
@@ -16,7 +16,7 @@ export class MonoQueue {
     this.deque.pushBack({ value, count });
   }
 
-  pop() {
+  pop(): T {
     if (this.empty()) {
       throw Error("Cannot pop from an empty queue");
     }
@@ -28,18 +28,18 @@ export class MonoQueue {
     return value;
   }
 
-  top() {
+  top(): T {
     if (this.empty()) {
       throw Error("Cannot get top value from an empty queue");
     }
     return this.deque.getFront().value;
   }
 
-  empty() {
+  empty(): boolean {
     return this.deque.empty();
   }
 
-  size() {
+  size(): number {
     return this.deque.size;
   }
 }

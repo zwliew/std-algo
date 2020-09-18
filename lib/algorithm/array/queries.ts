@@ -1,4 +1,4 @@
-export function count(arr: any[], val: any) {
+export function count<T>(arr: T[], val: T) {
   let count = 0;
   for (let el of arr) {
     if (el === val) {
@@ -8,7 +8,7 @@ export function count(arr: any[], val: any) {
   return count;
 }
 
-export function countIf(arr: any[], pred: (el: any) => boolean) {
+export function countIf<T>(arr: T[], pred: (el: T) => boolean) {
   let count = 0;
   for (let el of arr) {
     if (pred(el)) {
