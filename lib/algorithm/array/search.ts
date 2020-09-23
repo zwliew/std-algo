@@ -40,7 +40,7 @@ export function lowerBound<T>(arr: T[], val: T): number {
 /**
  * Returns the index of the first element in the array that is greater than
  * the specified value. The array must be sorted prior to making this call.
- * @param {T} arr The array to be searched
+ * @param {T[]} arr The array to be searched
  * @param {T} val The value to search for
  * @returns {number} The index of the first element greater than the specified value.
  *                    If no such element exists, the length of the array is returned.
@@ -54,8 +54,8 @@ export function upperBound<T>(arr: T[], val: T): number {
  * The first element in the range contains the index of the first element not less than the value.
  * The second element in the range contains the index of the first element greater than the value.
  * The array must be sorted prior to making this call.
- * @param {any} arr The array to be searched
- * @param {any} val The value to search for
+ * @param {T[]} arr The array to be searched
+ * @param {T} val The value to search for
  * @returns {[number, number]} The range containing all the elements in the array
  * that are equal to the specified value.
  */

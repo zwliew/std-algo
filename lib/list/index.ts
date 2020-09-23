@@ -1,3 +1,1 @@
-import LinkedList from "./linkedList";
-
-export { LinkedList };
+export * from "./linkedList";

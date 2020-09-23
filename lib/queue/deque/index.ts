@@ -1,3 +1,3 @@
-import ArrayDeque from './arrayDeque';
+import { ArrayDeque } from "./arrayDeque";
 
-export { ArrayDeque, ArrayDeque as Deque };
+export { ArrayDeque as Deque };

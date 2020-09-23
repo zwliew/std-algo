@@ -1,7 +1,7 @@
-import { Deque } from ".";
+import { Deque } from "./deque";
 
-export default class ArrayDeque implements Deque {
-  private arr = new Array(16);
+export class ArrayDeque<T> implements Deque<T> {
+  private arr: T[] = new Array(16);
   private front = -1;
   private back = -1;
 
@@ -23,9 +23,9 @@ export default class ArrayDeque implements Deque {
    * Returns the first element in the deque.
    * Throws an error if the queue is empty.
    *
-   * @returns {any} the first element in the deque.
+   * @returns {T} the first element in the deque.
    */
-  getFront(): any {
+  getFront(): T {
     if (this.empty()) {
       throw Error("Cannot get front of empty deque");
     }
@@ -36,9 +36,9 @@ export default class ArrayDeque implements Deque {
    * Returns the lat element in the deque.
    * Throws an error if the queue is empty.
    *
-   * @returns {any} the last element in the deque.
+   * @returns {T} the last element in the deque.
    */
-  getBack(): any {
+  getBack(): T {
     if (this.empty()) {
       throw Error("Cannot get back of empty deque");
     }
@@ -48,11 +48,11 @@ export default class ArrayDeque implements Deque {
   /**
    * Inserts the given element to the front of the deque.
    *
-   * @param item {any} the element to be inserted.
+   * @param item {T} the element to be inserted.
    *
    * @returns {void}
    */
-  pushFront(item: any): void {
+  pushFront(item: T): void {
     if (this.empty()) {
       this.front = this.back = 0;
     } else {
@@ -66,11 +66,11 @@ export default class ArrayDeque implements Deque {
   /**
    * Inserts the given element to the back of the deque.
    *
-   * @param item {any} the element to be inserted.
+   * @param item {T} the element to be inserted.
    *
    * @returns {void}
    */
-  pushBack(item: any): void {
+  pushBack(item: T): void {
     if (this.empty()) {
       this.front = this.back = 0;
     } else {
@@ -84,9 +84,9 @@ export default class ArrayDeque implements Deque {
   /**
    * Removes and returns the first element in the deque.
    *
-   * @returns {any} the first element in the deque.
+   * @returns {T} the first element in the deque.
    */
-  popFront(): any {
+  popFront(): T {
     if (this.empty()) {
       throw Error("Cannot pop from an empty deque");
     }
@@ -99,9 +99,9 @@ export default class ArrayDeque implements Deque {
   /**
    * Removes and returns the last element in the deque.
    *
-   * @returns {any} the last element in the deque.
+   * @returns {T} the last element in the deque.
    */
-  popBack(): any {
+  popBack(): T {
     if (this.empty()) {
       throw Error("Cannot pop from an empty deque");
     }

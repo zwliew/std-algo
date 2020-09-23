@@ -1,10 +1,10 @@
-export interface List {
+export interface List<T> {
   empty(): boolean;
-  pushFront(item: any): void;
-  pushBack(item: any): void;
-  getFront(): any;
-  getBack(): any;
-  popFront(): any;
-  popBack(): any;
+  pushFront(item: T): void;
+  pushBack(item: T): void;
+  getFront(): T;
+  getBack(): T;
+  popFront(): T;
+  popBack(): T;
   clear(): void;
 }

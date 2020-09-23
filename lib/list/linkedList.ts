@@ -1,14 +1,14 @@
 import { List } from "./list";
 
-class Node {
-  next: Node | null | undefined;
-  prev: Node | null | undefined;
-  item: any;
+class Node<T> {
+  next: Node<T> | null | undefined;
+  prev: Node<T> | null | undefined;
+  item: T | null;
 
   constructor(
-    item: any,
-    prev: Node | null | undefined,
-    next: Node | null | undefined
+    item: T | null,
+    prev: Node<T> | null | undefined,
+    next: Node<T> | null | undefined
   ) {
     this.item = item;
     this.next = next;
@@ -16,10 +16,10 @@ class Node {
   }
 }
 
-class LinkedList implements List {
+export class LinkedList<T> implements List<T> {
   size: number = 0;
-  front: Node = new Node("sentinel", null, null);
-  back: Node = new Node("sentinel", null, null);
+  front: Node<T> = new Node<T>(null, null, null);
+  back: Node<T> = new Node<T>(null, null, null);
 
   /**
    * Returns true if the list is empty.
@@ -33,11 +33,11 @@ class LinkedList implements List {
   /**
    * Inserts the given element to the front of the list.
    *
-   * @param item {any} The element to be inserted.
+   * @param item {T} The element to be inserted.
    *
    * @returns {void}
    */
-  pushFront(item: any): void {
+  pushFront(item: T): void {
     const newNode = new Node(item, this.front, this.front.next);
     this.front.next = newNode;
     if (this.empty()) {
@@ -49,11 +49,11 @@ class LinkedList implements List {
   /**
    * Inserts the given element to the back of the list.
    *
-   * @param item {any}
+   * @param item {T}
    *
    * @returns {void}
    */
-  pushBack(item: any): void {
+  pushBack(item: T): void {
     const newNode = new Node(item, this.back.prev, this.back);
     this.back.prev = newNode;
     if (this.empty()) {
@@ -65,9 +65,9 @@ class LinkedList implements List {
   /**
    * Removes and returns the first element in the list.
    *
-   * @returns {any} The first element in the list.
+   * @returns {T} The first element in the list.
    */
-  popFront(): any {
+  popFront(): T {
     if (this.empty()) {
       throw Error("List is empty.");
     }
@@ -77,15 +77,15 @@ class LinkedList implements List {
     if (this.empty()) {
       this.back.prev = this.back.prev?.prev;
     }
-    return item;
+    return item!;
   }
 
   /**
    * Removes and returns the last element in the list.
    *
-   * @returns {any}
+   * @returns {T}
    */
-  popBack(): any {
+  popBack(): T {
     if (this.empty()) {
       throw Error("List is empty.");
     }
@@ -95,7 +95,7 @@ class LinkedList implements List {
     if (this.empty()) {
       this.front.next = this.front.next?.next;
     }
-    return item;
+    return item!;
   }
 
   /**
@@ -111,29 +111,29 @@ class LinkedList implements List {
   /**
    * Returns the first element in the list.
    *
-   * @returns {any}
+   * @returns {T}
    */
-  getFront(): any {
+  getFront(): T {
     if (this.empty()) {
       throw Error("List is empty.");
     }
-    return this.front.next?.item;
+    return this.front.next?.item!;
   }
 
   /**
    * Returns the last element in the list.
    *
-   * @returns {any}
+   * @returns {T}
    */
-  getBack(): any {
+  getBack(): T {
     if (this.empty()) {
       throw Error("List is empty.");
     }
-    return this.back.prev?.item;
+    return this.back.prev?.item!;
   }
 
   // TODO: Implement more linked list methods
-  //   insertBefore(node: Node | null, item: any) {
+  //   insertBefore(node: Node | null, item: T) {
   //     if (node === null) {
   //       throw Error("Can't insert before a null node");
   //     }
@@ -147,7 +147,7 @@ class LinkedList implements List {
   //     ++this.size;
   //   }
 
-  //   insert(idx: number, item: any) {
+  //   insert(idx: number, item: T) {
   //     if (idx < 0 || idx > this.size) {
   //       throw Error("Index out of bounds");
   //     }
@@ -168,5 +168,3 @@ class LinkedList implements List {
   //   }
   // }
 }
-
-export default LinkedList;

@@ -1,11 +1,11 @@
-export interface Deque {
+export interface Deque<T> {
   size: number;
   empty(): boolean;
-  pushFront(item: any): void;
-  pushBack(item: any): void;
-  popFront(): any;
-  popBack(): any;
+  pushFront(item: T): void;
+  pushBack(item: T): void;
+  popFront(): T;
+  popBack(): T;
   clear(): void;
-  getFront(): any;
-  getBack(): any;
+  getFront(): T;
+  getBack(): T;
 }

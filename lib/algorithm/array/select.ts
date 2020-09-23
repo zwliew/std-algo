@@ -27,7 +27,7 @@ function partition<T>(
  * - All elements before index n are less than or equal to the elements after index n.
  * @param {T[]} arr The array that contains the element to be selected.
  * @param {number} n The index of the element to be selected.
- * @return {any} The nth element if the array were sorted.
+ * @return {T} The nth element if the array were sorted.
  */
 export function nthElement<T>(arr: T[], n: number): T {
   let lo = 0;
