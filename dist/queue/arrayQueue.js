@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.ArrayQueue = void 0;
-var deque_1 = require("./deque");
+var deque_1 = require("../deque");
 var ArrayQueue = (function () {
     function ArrayQueue() {
         this.deque = new deque_1.Deque();

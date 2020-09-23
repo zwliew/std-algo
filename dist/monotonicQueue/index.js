@@ -10,10 +10,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 exports.__esModule = true;
-__exportStar(require("./stack"), exports);
-__exportStar(require("./queue"), exports);
-__exportStar(require("./deque"), exports);
-__exportStar(require("./linkedList"), exports);
 __exportStar(require("./monotonicQueue"), exports);
-__exportStar(require("./algorithm"), exports);
-__exportStar(require("./math"), exports);

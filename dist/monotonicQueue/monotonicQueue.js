@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.MonotonicQueue = void 0;
-var deque_1 = require("./deque");
+var deque_1 = require("../deque");
 var MonotonicQueue = (function () {
     function MonotonicQueue(cmp) {
         this.deque = new deque_1.Deque();

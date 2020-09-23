@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ArrayStack = void 0;
 var ArrayStack = (function () {
     function ArrayStack() {
         this.arr = [];
@@ -30,4 +31,4 @@ var ArrayStack = (function () {
     };
     return ArrayStack;
 }());
-exports["default"] = ArrayStack;
+exports.ArrayStack = ArrayStack;
