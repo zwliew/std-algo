@@ -1,4 +1,4 @@
-import { Deque } from "./deque";
+import { Deque } from "../deque";
 
 export class MonotonicQueue<T> {
   private deque = new Deque<{ value: T; count: number }>();

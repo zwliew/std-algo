@@ -4,12 +4,12 @@ Standard algorithms and data structures for JavaScript.
 
 ## What's implemented:
 
-- [Array algorithms](lib/algorithm/array)
-- [Doubly-linked list](lib/list)
 - [Stack](lib/stack)
-- [Deque](lib/queue/deque)
+- [Deque](lib/deque)
 - [Queue](lib/queue)
-- [Monotonic queue](lib/queue/monotonicQueue.ts)
+- [Doubly-linked list](lib/linkedList)
+- [Monotonic queue](lib/monotonicQueue)
+- [Array algorithms](lib/algorithm/array)
 - [Binary search](lib/algorithm/array/search.ts)
 - [Quickselect](lib/algorithm/array/select.ts)
 - [Random number generators](lib/math/random.ts)

@@ -1,4 +1,4 @@
-import Queue from "./queue";
+import { ArrayQueue } from "./arrayQueue";
 
 test("Queue.push() and Queue.pop() pushes and pops items in the correct order", () => {
   const TEST_CASES = [
@@ -22,7 +22,7 @@ test("Queue.push() and Queue.pop() pushes and pops items in the correct order", 
     },
   ];
   for (const { ops, result } of TEST_CASES) {
-    const q = new Queue();
+    const q = new ArrayQueue();
     const curResult = [];
     for (const [val, cmd] of ops) {
       if (cmd === "push") {
@@ -62,7 +62,7 @@ test("Queue.front() and Queue.back() return the front and back of the queue", ()
     },
   ];
   for (const { ops, result } of TEST_CASES) {
-    const q = new Queue();
+    const q = new ArrayQueue<number | string>();
     const curResult = [];
     for (const [val, cmd] of ops) {
       if (cmd === "push") {
@@ -70,9 +70,9 @@ test("Queue.front() and Queue.back() return the front and back of the queue", ()
       } else if (cmd === "pop") {
         curResult.push(q.pop());
       } else if (cmd === "front") {
-        curResult.push(q.front());
+        curResult.push(q.getFront());
       } else if (cmd === "back") {
-        curResult.push(q.back());
+        curResult.push(q.getBack());
       }
     }
     expect(curResult).toEqual(result);
@@ -107,7 +107,7 @@ test("Queue.empty() returns whether the queue is empty", () => {
     },
   ];
   for (const { ops, result } of TEST_CASES) {
-    const q = new Queue();
+    const q = new ArrayQueue<number | string>();
     const curResult = [];
     for (const [val, cmd] of ops) {
       if (cmd === "empty") {

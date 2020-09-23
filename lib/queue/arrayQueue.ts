@@ -1,4 +1,4 @@
-import { Deque } from "./deque";
+import { Deque } from "../deque";
 import { Queue } from "./queue";
 
 export class ArrayQueue<T> implements Queue<T> {

@@ -1,6 +1,6 @@
 import { Stack } from "./stack";
 
-export default class ArrayStack<T> implements Stack<T> {
+export class ArrayStack<T> implements Stack<T> {
   private arr: T[] = [];
 
   /**

@@ -1,4 +1,4 @@
-import LinkedList from "./linkedList";
+import { LinkedList } from "./linkedList";
 
 test("LinkedList.pushFront() and LinkedList.popFront() pushes and pops items from the front of the list", () => {
   const TEST_CASES = [
