@@ -1,11 +1,16 @@
 "use strict";
 exports.__esModule = true;
+exports.BinaryHeap = void 0;
 var BinaryHeap = (function () {
     function BinaryHeap() {
-        this.length = 0;
+        this.size = 0;
+        this.arr = [];
     }
-    BinaryHeap.prototype.push = function () {
-        throw new Error("Method not implemented.");
+    BinaryHeap.prototype.empty = function () {
+        return this.size === 0;
+    };
+    BinaryHeap.prototype.push = function (item) {
+        this.arr.push(item);
     };
     BinaryHeap.prototype.pop = function () {
         throw new Error("Method not implemented.");
@@ -15,4 +20,5 @@ var BinaryHeap = (function () {
     };
     return BinaryHeap;
 }());
+exports.BinaryHeap = BinaryHeap;
 exports["default"] = BinaryHeap;

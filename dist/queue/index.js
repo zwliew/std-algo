@@ -10,6 +10,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 exports.__esModule = true;
-__exportStar(require("./queue"), exports);
+exports.Queue = void 0;
+var arrayQueue_1 = require("./arrayQueue");
+exports.Queue = arrayQueue_1.ArrayQueue;
 __exportStar(require("./deque"), exports);
 __exportStar(require("./monotonicQueue"), exports);

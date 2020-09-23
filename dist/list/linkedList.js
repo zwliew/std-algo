@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.LinkedList = void 0;
 var Node = (function () {
     function Node(item, prev, next) {
         this.item = item;
@@ -11,8 +12,8 @@ var Node = (function () {
 var LinkedList = (function () {
     function LinkedList() {
         this.size = 0;
-        this.front = new Node("sentinel", null, null);
-        this.back = new Node("sentinel", null, null);
+        this.front = new Node(null, null, null);
+        this.back = new Node(null, null, null);
     }
     LinkedList.prototype.empty = function () {
         return this.size === 0;
@@ -79,4 +80,4 @@ var LinkedList = (function () {
     };
     return LinkedList;
 }());
-exports["default"] = LinkedList;
+exports.LinkedList = LinkedList;

@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.ArrayDeque = void 0;
 var ArrayDeque = (function () {
     function ArrayDeque() {
         this.arr = new Array(16);
@@ -90,4 +91,4 @@ var ArrayDeque = (function () {
     };
     return ArrayDeque;
 }());
-exports["default"] = ArrayDeque;
+exports.ArrayDeque = ArrayDeque;
