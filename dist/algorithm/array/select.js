@@ -5,21 +5,16 @@ function selectPivotIdx(lo, hi) {
     return Math.floor(Math.random() * (hi + 1 - lo)) + lo;
 }
 function partition(arr, lo, hi, pivotIdx) {
-    var tmp = arr[hi];
-    arr[hi] = arr[pivotIdx];
-    arr[pivotIdx] = tmp;
+    var _a, _b, _c;
+    _a = [arr[pivotIdx], arr[hi]], arr[hi] = _a[0], arr[pivotIdx] = _a[1];
     var storeIdx = lo;
-    for (var i = lo; i < hi - 1; ++i) {
+    for (var i = lo; i < hi; ++i) {
         if (arr[i] < arr[hi]) {
-            tmp = arr[i];
-            arr[i] = arr[storeIdx];
-            arr[storeIdx] = tmp;
+            _b = [arr[storeIdx], arr[i]], arr[i] = _b[0], arr[storeIdx] = _b[1];
             ++storeIdx;
         }
     }
-    tmp = arr[storeIdx];
-    arr[storeIdx] = arr[hi];
-    arr[hi] = tmp;
+    _c = [arr[storeIdx], arr[hi]], arr[hi] = _c[0], arr[storeIdx] = _c[1];
     return storeIdx;
 }
 function nthElement(arr, n) {
