@@ -8,26 +8,20 @@ function partition<T>(
   hi: number,
   pivotIdx: number
 ): number {
-  let tmp = arr[hi];
-  arr[hi] = arr[pivotIdx];
-  arr[pivotIdx] = tmp;
+  [arr[hi], arr[pivotIdx]] = [arr[pivotIdx], arr[hi]];
   let storeIdx = lo;
-  for (let i = lo; i < hi - 1; ++i) {
+  for (let i = lo; i < hi; ++i) {
     if (arr[i] < arr[hi]) {
-      tmp = arr[i];
-      arr[i] = arr[storeIdx];
-      arr[storeIdx] = tmp;
+      [arr[i], arr[storeIdx]] = [arr[storeIdx], arr[i]];
       ++storeIdx;
     }
   }
-  tmp = arr[storeIdx];
-  arr[storeIdx] = arr[hi];
-  arr[hi] = tmp;
+  [arr[hi], arr[storeIdx]] = [arr[storeIdx], arr[hi]];
   return storeIdx;
 }
 
 /**
- * Returns the element at index n if the array were sorted.
+ * Returns the element at index n (0-indexed) if the array were sorted.
  * This also rearranges the elements in the specified array such that:
  * - The element at index n is changed to the nth element if the array were sorted.
  * - All elements before index n are less than or equal to the elements after index n.
