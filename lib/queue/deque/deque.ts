@@ -6,6 +6,6 @@ export interface Deque {
   popFront(): any;
   popBack(): any;
   clear(): void;
-  front(): any;
-  back(): any;
+  getFront(): any;
+  getBack(): any;
 }
