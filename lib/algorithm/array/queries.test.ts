@@ -1,6 +1,6 @@
-import { count, countIf } from './queries';
+import { count, countIf } from "./queries";
 
-test('count returns the number of elements equal to the specified value', () => {
+test("count returns the number of elements equal to the specified value", () => {
   const TEST_CASES = [
     {
       arr: [1, 1, 1, 1, 1, 10000],
@@ -35,7 +35,7 @@ test('count returns the number of elements equal to the specified value', () => 
   }
 });
 
-test('count returns the number of elements that satisfy the predicate', () => {
+test("count returns the number of elements that satisfy the predicate", () => {
   const TEST_CASES = [
     {
       arr: [1, 1, 1, 1, 1, 10000],

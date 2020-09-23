@@ -1,4 +1,4 @@
-import { Deque } from './deque';
+import { Deque } from "./deque";
 
 class Queue {
   private deque = new Deque();
@@ -25,6 +25,10 @@ class Queue {
 
   size() {
     return this.deque.size;
+  }
+
+  clear() {
+    this.deque.clear();
   }
 }
 

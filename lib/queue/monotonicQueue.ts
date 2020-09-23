@@ -1,6 +1,6 @@
 import { Deque } from "./deque";
 
-export class MonoQueue<T> {
+export class MonotonicQueue<T> {
   private deque = new Deque();
   private cmp: (x: T, y: T) => boolean;
 
