@@ -1,12 +1,11 @@
 "use strict";
 exports.__esModule = true;
-exports.lcm = exports.gcd = void 0;
+exports.div = exports.lcm = exports.gcd = void 0;
 function gcd(a, b) {
-    var tmp;
+    var _a;
     while (b) {
-        tmp = a % b;
-        a = b;
-        b = tmp;
+        a = a % b;
+        _a = [b, a], a = _a[0], b = _a[1];
     }
     return a;
 }
@@ -15,3 +14,10 @@ function lcm(a, b) {
     return (a / gcd(a, b)) * b;
 }
 exports.lcm = lcm;
+function div(a, b) {
+    return {
+        quotient: Math.floor(a / b),
+        remainder: a % b
+    };
+}
+exports.div = div;

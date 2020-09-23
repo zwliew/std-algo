@@ -2,20 +2,18 @@
 exports.__esModule = true;
 exports.equalRange = exports.upperBound = exports.lowerBound = exports.binarySearch = void 0;
 function binarySearch(arr, val, comp) {
-    var lo = 0;
-    var hi = arr.length - 1;
-    var idx = arr.length;
-    while (lo <= hi) {
+    var lo = -1;
+    var hi = arr.length;
+    while (lo < hi - 1) {
         var mid = lo + Math.floor((hi - lo) / 2);
         if (comp(arr[mid], val)) {
-            idx = mid;
-            hi = mid - 1;
+            hi = mid;
         }
         else {
-            lo = mid + 1;
+            lo = mid;
         }
     }
-    return idx;
+    return hi;
 }
 exports.binarySearch = binarySearch;
 function lowerBound(arr, val) {

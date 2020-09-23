@@ -23,6 +23,9 @@ var Queue = (function () {
     Queue.prototype.size = function () {
         return this.deque.size;
     };
+    Queue.prototype.clear = function () {
+        this.deque.clear();
+    };
     return Queue;
 }());
 exports["default"] = Queue;

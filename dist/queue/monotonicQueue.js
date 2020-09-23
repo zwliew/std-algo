@@ -1,20 +1,20 @@
 "use strict";
 exports.__esModule = true;
-exports.MonoQueue = void 0;
+exports.MonotonicQueue = void 0;
 var deque_1 = require("./deque");
-var MonoQueue = (function () {
-    function MonoQueue(cmp) {
+var MonotonicQueue = (function () {
+    function MonotonicQueue(cmp) {
         this.deque = new deque_1.Deque();
         this.cmp = cmp;
     }
-    MonoQueue.prototype.push = function (value) {
+    MonotonicQueue.prototype.push = function (value) {
         var count = 1;
         while (!this.deque.empty() && this.cmp(this.deque.getBack().value, value)) {
             count += this.deque.popBack().count;
         }
         this.deque.pushBack({ value: value, count: count });
     };
-    MonoQueue.prototype.pop = function () {
+    MonotonicQueue.prototype.pop = function () {
         if (this.empty()) {
             throw Error("Cannot pop from an empty queue");
         }
@@ -25,18 +25,18 @@ var MonoQueue = (function () {
         }
         return value;
     };
-    MonoQueue.prototype.top = function () {
+    MonotonicQueue.prototype.top = function () {
         if (this.empty()) {
             throw Error("Cannot get top value from an empty queue");
         }
         return this.deque.getFront().value;
     };
-    MonoQueue.prototype.empty = function () {
+    MonotonicQueue.prototype.empty = function () {
         return this.deque.empty();
     };
-    MonoQueue.prototype.size = function () {
+    MonotonicQueue.prototype.size = function () {
         return this.deque.size;
     };
-    return MonoQueue;
+    return MonotonicQueue;
 }());
-exports.MonoQueue = MonoQueue;
+exports.MonotonicQueue = MonotonicQueue;
