@@ -7,6 +7,7 @@ Standard algorithms and data structures for JavaScript.
 - [Stack](lib/stack)
 - [Deque](lib/deque)
 - [Queue](lib/queue)
+- [Priority queue](lib/priorityQueue)
 - [Doubly-linked list](lib/linkedList)
 - [Monotonic queue](lib/monotonicQueue)
 - [Array algorithms](lib/algorithm/array)
@@ -19,6 +20,5 @@ Standard algorithms and data structures for JavaScript.
 
 ## To-do:
 
-- Heap
 - Binary search tree
 - Better selection algorithm (quickselect has quadratic worst-case time complexity)
