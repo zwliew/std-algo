@@ -2,6 +2,19 @@ import { Heap } from "./heap";
 
 export class BinaryHeap<T> implements Heap<T> {
   private heap: T[] = [];
+  private cmp: (x: T, y: T) => boolean;
+
+  /**
+   * Constructs the heap.
+   *
+   * @param cmp {(x: T, y: T) => boolean} returns true if x should go above y in the heap.
+   */
+  constructor(cmp?: (x: T, y: T) => boolean) {
+    if (cmp === undefined) {
+      cmp = (x, y) => x > y;
+    }
+    this.cmp = cmp;
+  }
 
   /**
    * Returns true if the heap is empty.
@@ -67,10 +80,12 @@ export class BinaryHeap<T> implements Heap<T> {
     }
 
     const item = this.heap[i];
-    for (let parent = (i - 1) >> 1; parent >= 0 && item > this.heap[parent]; ) {
+    for (
+      let parent = (i - 1) >> 1;
+      parent >= 0 && this.cmp(item, this.heap[parent]);
+      i = parent, parent = (i - 1) >> 1
+    ) {
       this.heap[i] = this.heap[parent];
-      i = parent;
-      parent = (i - 1) >> 1;
     }
     this.heap[i] = item;
   }
@@ -83,17 +98,17 @@ export class BinaryHeap<T> implements Heap<T> {
     const item = this.heap[i];
     for (
       let l = 2 * i + 1, r = 2 * i + 2;
-      (l < this.size() && item < this.heap[l]) ||
-      (r < this.size() && item < this.heap[r]);
+      (l < this.size() && this.cmp(this.heap[l], item)) ||
+      (r < this.size() && this.cmp(this.heap[r], item));
       l = 2 * i + 1, r = 2 * i + 2
     ) {
       let nxtIdx = i;
       let largest = item;
-      if (l < this.size() && largest < this.heap[l]) {
+      if (l < this.size() && this.cmp(this.heap[l], largest)) {
         nxtIdx = l;
         largest = this.heap[l];
       }
-      if (r < this.size() && largest < this.heap[r]) {
+      if (r < this.size() && this.cmp(this.heap[r], largest)) {
         nxtIdx = r;
         largest = this.heap[r];
       }

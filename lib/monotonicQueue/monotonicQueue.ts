@@ -7,7 +7,7 @@ export class MonotonicQueue<T> {
   /**
    * Constructs the monotonic queue.
    *
-   * @param cmp {(x: T, y: T) => boolean} The comparator function to be used to order the elements in the queue.
+   * @param cmp {(x: T, y: T) => boolean} Returns true if x should go before y in the queue.
    */
   constructor(cmp?: (x: T, y: T) => boolean) {
     // Default to a maximum monotonic queue.
