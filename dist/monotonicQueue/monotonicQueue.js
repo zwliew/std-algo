@@ -5,6 +5,9 @@ var deque_1 = require("../deque");
 var MonotonicQueue = (function () {
     function MonotonicQueue(cmp) {
         this.deque = new deque_1.Deque();
+        if (cmp === undefined) {
+            cmp = function (x, y) { return x < y; };
+        }
         this.cmp = cmp;
     }
     MonotonicQueue.prototype.push = function (value) {
