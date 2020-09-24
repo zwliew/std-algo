@@ -9,7 +9,11 @@ export class MonotonicQueue<T> {
    *
    * @param cmp {(x: T, y: T) => boolean} The comparator function to be used to order the elements in the queue.
    */
-  constructor(cmp: (x: T, y: T) => boolean) {
+  constructor(cmp?: (x: T, y: T) => boolean) {
+    // Default to a maximum monotonic queue.
+    if (cmp === undefined) {
+      cmp = (x, y) => x < y;
+    }
     this.cmp = cmp;
   }
 
