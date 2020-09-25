@@ -11,12 +11,15 @@ var Node = (function () {
 }());
 var LinkedList = (function () {
     function LinkedList() {
-        this.size = 0;
+        this.sz = 0;
         this.front = new Node(null, null, null);
         this.back = new Node(null, null, null);
     }
     LinkedList.prototype.empty = function () {
-        return this.size === 0;
+        return this.size() === 0;
+    };
+    LinkedList.prototype.size = function () {
+        return this.sz;
     };
     LinkedList.prototype.pushFront = function (item) {
         var newNode = new Node(item, this.front, this.front.next);
@@ -24,7 +27,7 @@ var LinkedList = (function () {
         if (this.empty()) {
             this.back.prev = newNode;
         }
-        ++this.size;
+        ++this.sz;
     };
     LinkedList.prototype.pushBack = function (item) {
         var newNode = new Node(item, this.back.prev, this.back);
@@ -32,7 +35,7 @@ var LinkedList = (function () {
         if (this.empty()) {
             this.front.next = newNode;
         }
-        ++this.size;
+        ++this.sz;
     };
     LinkedList.prototype.popFront = function () {
         var _a, _b, _c;
@@ -41,7 +44,7 @@ var LinkedList = (function () {
         }
         var item = (_a = this.front.next) === null || _a === void 0 ? void 0 : _a.item;
         this.front.next = (_b = this.front.next) === null || _b === void 0 ? void 0 : _b.next;
-        --this.size;
+        --this.sz;
         if (this.empty()) {
             this.back.prev = (_c = this.back.prev) === null || _c === void 0 ? void 0 : _c.prev;
         }
@@ -54,7 +57,7 @@ var LinkedList = (function () {
         }
         var item = (_a = this.back.prev) === null || _a === void 0 ? void 0 : _a.item;
         this.back.prev = (_b = this.back.prev) === null || _b === void 0 ? void 0 : _b.prev;
-        --this.size;
+        --this.sz;
         if (this.empty()) {
             this.front.next = (_c = this.front.next) === null || _c === void 0 ? void 0 : _c.next;
         }
@@ -62,7 +65,7 @@ var LinkedList = (function () {
     };
     LinkedList.prototype.clear = function () {
         this.front.next = this.back.prev = null;
-        this.size = 0;
+        this.sz = 0;
     };
     LinkedList.prototype.getFront = function () {
         var _a;

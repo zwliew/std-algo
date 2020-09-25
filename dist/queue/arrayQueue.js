@@ -7,7 +7,7 @@ var ArrayQueue = (function () {
         this.deque = new deque_1.Deque();
     }
     ArrayQueue.prototype.size = function () {
-        return this.deque.size;
+        return this.deque.size();
     };
     ArrayQueue.prototype.getFront = function () {
         return this.deque.getFront();

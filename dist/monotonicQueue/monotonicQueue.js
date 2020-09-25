@@ -38,7 +38,7 @@ var MonotonicQueue = (function () {
         return this.deque.empty();
     };
     MonotonicQueue.prototype.size = function () {
-        return this.deque.size;
+        return this.deque.size();
     };
     return MonotonicQueue;
 }());

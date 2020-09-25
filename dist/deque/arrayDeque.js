@@ -6,10 +6,13 @@ var ArrayDeque = (function () {
         this.arr = new Array(16);
         this.front = -1;
         this.back = -1;
-        this.size = 0;
+        this.sz = 0;
     }
+    ArrayDeque.prototype.size = function () {
+        return this.sz;
+    };
     ArrayDeque.prototype.empty = function () {
-        return this.size === 0;
+        return this.size() === 0;
     };
     ArrayDeque.prototype.getFront = function () {
         if (this.empty()) {
@@ -31,7 +34,7 @@ var ArrayDeque = (function () {
             this.front = this.dec(this.front);
         }
         this.arr[this.front] = item;
-        ++this.size;
+        ++this.sz;
         this.resizeIfNeeded();
     };
     ArrayDeque.prototype.pushBack = function (item) {
@@ -42,7 +45,7 @@ var ArrayDeque = (function () {
             this.back = this.inc(this.back);
         }
         this.arr[this.back] = item;
-        ++this.size;
+        ++this.sz;
         this.resizeIfNeeded();
     };
     ArrayDeque.prototype.popFront = function () {
@@ -51,7 +54,7 @@ var ArrayDeque = (function () {
         }
         var item = this.arr[this.front];
         this.front = this.inc(this.front);
-        --this.size;
+        --this.sz;
         return item;
     };
     ArrayDeque.prototype.popBack = function () {
@@ -60,28 +63,28 @@ var ArrayDeque = (function () {
         }
         var item = this.arr[this.back];
         this.back = this.dec(this.back);
-        --this.size;
+        --this.sz;
         return item;
     };
     ArrayDeque.prototype.clear = function () {
         this.arr = new Array(16);
         this.front = -1;
         this.back = -1;
-        this.size = 0;
+        this.sz = 0;
     };
     ArrayDeque.prototype.resizeIfNeeded = function () {
-        if (this.size === this.arr.length) {
+        if (this.size() === this.arr.length) {
             this.resize(this.arr.length * 2);
         }
     };
     ArrayDeque.prototype.resize = function (newSize) {
         var newArr = new Array(newSize);
-        for (var idx = this.front, i = 0; i < this.size; idx = this.inc(idx), ++i) {
+        for (var idx = this.front, i = 0; i < this.size(); idx = this.inc(idx), ++i) {
             newArr[i] = this.arr[idx];
         }
         this.arr = newArr;
         this.front = 0;
-        this.back = this.size - 1;
+        this.back = this.size() - 1;
     };
     ArrayDeque.prototype.inc = function (idx) {
         return (idx + 1) % this.arr.length;
