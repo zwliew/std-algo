@@ -5,7 +5,7 @@ export class ArrayQueue<T> implements Queue<T> {
   private deque = new Deque<T>();
 
   size(): number {
-    return this.deque.size;
+    return this.deque.size();
   }
 
   /**

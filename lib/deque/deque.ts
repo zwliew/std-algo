@@ -1,5 +1,5 @@
 export interface Deque<T> {
-  size: number;
+  size(): number;
   empty(): boolean;
   pushFront(item: T): void;
   pushBack(item: T): void;

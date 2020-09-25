@@ -4,11 +4,16 @@ export class ArrayDeque<T> implements Deque<T> {
   private arr: T[] = new Array(16);
   private front = -1;
   private back = -1;
+  private sz = 0;
 
   /**
-   * The number of elements in the deque.
+   * Returns the number of elements in the deque.
+   *
+   * @returns {number} the number of elements in the deque.
    */
-  size = 0;
+  size(): number {
+    return this.sz;
+  }
 
   /**
    * Returns true if the deque is empty.
@@ -16,7 +21,7 @@ export class ArrayDeque<T> implements Deque<T> {
    * @returns {boolean} true if the deque is empty; false otherwise.
    */
   empty(): boolean {
-    return this.size === 0;
+    return this.size() === 0;
   }
 
   /**
@@ -59,7 +64,7 @@ export class ArrayDeque<T> implements Deque<T> {
       this.front = this.dec(this.front);
     }
     this.arr[this.front] = item;
-    ++this.size;
+    ++this.sz;
     this.resizeIfNeeded();
   }
 
@@ -77,7 +82,7 @@ export class ArrayDeque<T> implements Deque<T> {
       this.back = this.inc(this.back);
     }
     this.arr[this.back] = item;
-    ++this.size;
+    ++this.sz;
     this.resizeIfNeeded();
   }
 
@@ -92,7 +97,7 @@ export class ArrayDeque<T> implements Deque<T> {
     }
     const item = this.arr[this.front];
     this.front = this.inc(this.front);
-    --this.size;
+    --this.sz;
     return item;
   }
 
@@ -107,7 +112,7 @@ export class ArrayDeque<T> implements Deque<T> {
     }
     const item = this.arr[this.back];
     this.back = this.dec(this.back);
-    --this.size;
+    --this.sz;
     return item;
   }
 
@@ -120,23 +125,27 @@ export class ArrayDeque<T> implements Deque<T> {
     this.arr = new Array(16);
     this.front = -1;
     this.back = -1;
-    this.size = 0;
+    this.sz = 0;
   }
 
   private resizeIfNeeded() {
-    if (this.size === this.arr.length) {
+    if (this.size() === this.arr.length) {
       this.resize(this.arr.length * 2);
     }
   }
 
   private resize(newSize: number) {
     const newArr = new Array(newSize);
-    for (let idx = this.front, i = 0; i < this.size; idx = this.inc(idx), ++i) {
+    for (
+      let idx = this.front, i = 0;
+      i < this.size();
+      idx = this.inc(idx), ++i
+    ) {
       newArr[i] = this.arr[idx];
     }
     this.arr = newArr;
     this.front = 0;
-    this.back = this.size - 1;
+    this.back = this.size() - 1;
   }
 
   private inc(idx: number) {

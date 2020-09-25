@@ -17,9 +17,9 @@ class Node<T> {
 }
 
 export class LinkedList<T> implements List<T> {
-  size: number = 0;
-  front: Node<T> = new Node<T>(null, null, null);
-  back: Node<T> = new Node<T>(null, null, null);
+  private sz: number = 0;
+  private front: Node<T> = new Node<T>(null, null, null);
+  private back: Node<T> = new Node<T>(null, null, null);
 
   /**
    * Returns true if the list is empty.
@@ -27,7 +27,16 @@ export class LinkedList<T> implements List<T> {
    * @returns {boolean} true if the list is empty; false otherwise.
    */
   empty(): boolean {
-    return this.size === 0;
+    return this.size() === 0;
+  }
+
+  /**
+   * Returns the number of elements in the list.
+   *
+   * @returns {number} the number of elements in the list.
+   */
+  size(): number {
+    return this.sz;
   }
 
   /**
@@ -43,7 +52,7 @@ export class LinkedList<T> implements List<T> {
     if (this.empty()) {
       this.back.prev = newNode;
     }
-    ++this.size;
+    ++this.sz;
   }
 
   /**
@@ -59,7 +68,7 @@ export class LinkedList<T> implements List<T> {
     if (this.empty()) {
       this.front.next = newNode;
     }
-    ++this.size;
+    ++this.sz;
   }
 
   /**
@@ -73,7 +82,7 @@ export class LinkedList<T> implements List<T> {
     }
     const item = this.front.next?.item;
     this.front.next = this.front.next?.next;
-    --this.size;
+    --this.sz;
     if (this.empty()) {
       this.back.prev = this.back.prev?.prev;
     }
@@ -91,7 +100,7 @@ export class LinkedList<T> implements List<T> {
     }
     const item = this.back.prev?.item;
     this.back.prev = this.back.prev?.prev;
-    --this.size;
+    --this.sz;
     if (this.empty()) {
       this.front.next = this.front.next?.next;
     }
@@ -105,7 +114,7 @@ export class LinkedList<T> implements List<T> {
    */
   clear(): void {
     this.front.next = this.back.prev = null;
-    this.size = 0;
+    this.sz = 0;
   }
 
   /**

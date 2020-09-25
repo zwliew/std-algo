@@ -74,6 +74,6 @@ export class MonotonicQueue<T> {
    * @returns {number} the number of elements in the queue.
    */
   size(): number {
-    return this.deque.size;
+    return this.deque.size();
   }
 }
