@@ -3,7 +3,9 @@
     "outDir": "./dist",
     "lib": ["ESNext"],
     "strict": true,
-    "removeComments": true
+    "removeComments": true,
+    "downlevelIteration": true,
+    "importHelpers": true
   },
   "exclude": ["**/*.test.ts"]
 }
