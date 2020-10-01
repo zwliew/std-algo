@@ -1,2 +1,3 @@
-export * from './array';
-export * from './algorithm';
+export * from "./number";
+export * from "./array";
+export * from "./string";
