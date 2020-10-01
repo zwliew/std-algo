@@ -1,20 +1,21 @@
 "use strict";
 exports.__esModule = true;
 exports.nthElement = void 0;
+var tslib_1 = require("tslib");
 function selectPivotIdx(lo, hi) {
     return Math.floor(Math.random() * (hi + 1 - lo)) + lo;
 }
 function partition(arr, lo, hi, pivotIdx) {
     var _a, _b, _c;
-    _a = [arr[pivotIdx], arr[hi]], arr[hi] = _a[0], arr[pivotIdx] = _a[1];
+    _a = tslib_1.__read([arr[pivotIdx], arr[hi]], 2), arr[hi] = _a[0], arr[pivotIdx] = _a[1];
     var storeIdx = lo;
     for (var i = lo; i < hi; ++i) {
         if (arr[i] < arr[hi]) {
-            _b = [arr[storeIdx], arr[i]], arr[i] = _b[0], arr[storeIdx] = _b[1];
+            _b = tslib_1.__read([arr[storeIdx], arr[i]], 2), arr[i] = _b[0], arr[storeIdx] = _b[1];
             ++storeIdx;
         }
     }
-    _c = [arr[storeIdx], arr[hi]], arr[hi] = _c[0], arr[storeIdx] = _c[1];
+    _c = tslib_1.__read([arr[storeIdx], arr[hi]], 2), arr[hi] = _c[0], arr[storeIdx] = _c[1];
     return storeIdx;
 }
 function nthElement(arr, n) {

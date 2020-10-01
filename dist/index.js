@@ -1,19 +1,12 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 exports.__esModule = true;
-__exportStar(require("./stack"), exports);
-__exportStar(require("./queue"), exports);
-__exportStar(require("./deque"), exports);
-__exportStar(require("./linkedList"), exports);
-__exportStar(require("./monotonicQueue"), exports);
-__exportStar(require("./algorithm"), exports);
-__exportStar(require("./math"), exports);
+var tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./stack"), exports);
+tslib_1.__exportStar(require("./queue"), exports);
+tslib_1.__exportStar(require("./deque"), exports);
+tslib_1.__exportStar(require("./linkedList"), exports);
+tslib_1.__exportStar(require("./monotonicQueue"), exports);
+tslib_1.__exportStar(require("./priorityQueue"), exports);
+tslib_1.__exportStar(require("./sortedMap"), exports);
+tslib_1.__exportStar(require("./algorithm"), exports);
+tslib_1.__exportStar(require("./math"), exports);
