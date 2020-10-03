@@ -1,6 +1,4 @@
-function selectPivotIdx(lo: number, hi: number) {
-  return Math.floor(Math.random() * (hi + 1 - lo)) + lo;
-}
+import { randInt } from "../../math/random";
 
 function partition<T>(
   arr: T[],
@@ -8,15 +6,15 @@ function partition<T>(
   hi: number,
   pivotIdx: number
 ): number {
-  [arr[hi], arr[pivotIdx]] = [arr[pivotIdx], arr[hi]];
+  [arr[hi - 1], arr[pivotIdx]] = [arr[pivotIdx], arr[hi - 1]];
   let storeIdx = lo;
   for (let i = lo; i < hi; ++i) {
-    if (arr[i] < arr[hi]) {
+    if (arr[i] < arr[hi - 1]) {
       [arr[i], arr[storeIdx]] = [arr[storeIdx], arr[i]];
       ++storeIdx;
     }
   }
-  [arr[hi], arr[storeIdx]] = [arr[storeIdx], arr[hi]];
+  [arr[hi - 1], arr[storeIdx]] = [arr[storeIdx], arr[hi - 1]];
   return storeIdx;
 }
 
@@ -30,20 +28,19 @@ function partition<T>(
  * @return {T} The nth element if the array were sorted.
  */
 export function nthElement<T>(arr: T[], n: number): T {
+  if (n >= arr.length || n < 0) {
+    throw Error("Given index is out of bounds.");
+  }
+
   let lo = 0;
-  let hi = arr.length - 1;
-  while (lo < hi) {
-    let pivotIdx = selectPivotIdx(lo, hi);
+  let hi = arr.length;
+  while (lo < hi - 1) {
+    let pivotIdx = randInt(lo, hi);
     pivotIdx = partition(arr, lo, hi, pivotIdx);
-
-    if (n === pivotIdx) {
-      return arr[n];
-    }
-
     if (n < pivotIdx) {
-      hi = pivotIdx - 1;
+      hi = pivotIdx;
     } else {
-      lo = pivotIdx + 1;
+      lo = pivotIdx;
     }
   }
   return arr[lo];
