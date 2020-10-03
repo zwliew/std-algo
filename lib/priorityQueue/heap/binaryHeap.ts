@@ -7,13 +7,23 @@ export class BinaryHeap<T> implements Heap<T> {
   /**
    * Constructs the heap.
    *
+   * @param arr {T[]} An array of elements to initialize the heap with.
    * @param cmp {(x: T, y: T) => boolean} returns true if x should go above y in the heap.
    */
-  constructor(cmp?: (x: T, y: T) => boolean) {
-    if (cmp === undefined) {
+  constructor({ arr, cmp }: { arr?: T[]; cmp?: (x: T, y: T) => boolean }) {
+    //Default to a max heap.
+    if (!(cmp instanceof Function)) {
       cmp = (x, y) => x > y;
     }
     this.cmp = cmp;
+
+    // Initialize the heap with the given array of elements.
+    if (arr instanceof Array) {
+      this.heap = arr;
+      for (let i = (this.size() >> 1) - 1; i >= 0; --i) {
+        this.siftDown(i, this.size());
+      }
+    }
   }
 
   /**
@@ -57,7 +67,7 @@ export class BinaryHeap<T> implements Heap<T> {
     this.heap[0] = this.heap[this.size() - 1];
     this.heap.pop();
     if (!this.empty()) {
-      this.siftDown(0);
+      this.siftDown(0, this.size());
     }
     return item;
   }
@@ -90,7 +100,7 @@ export class BinaryHeap<T> implements Heap<T> {
     this.heap[i] = item;
   }
 
-  private siftDown(i: number): void {
+  private siftDown(i: number, end: number): void {
     if (this.size() <= i) {
       throw Error("Heap size too small.");
     }
@@ -98,17 +108,17 @@ export class BinaryHeap<T> implements Heap<T> {
     const item = this.heap[i];
     for (
       let l = 2 * i + 1, r = 2 * i + 2;
-      (l < this.size() && this.cmp(this.heap[l], item)) ||
-      (r < this.size() && this.cmp(this.heap[r], item));
+      (l < end && this.cmp(this.heap[l], item)) ||
+      (r < end && this.cmp(this.heap[r], item));
       l = 2 * i + 1, r = 2 * i + 2
     ) {
       let nxtIdx = i;
       let largest = item;
-      if (l < this.size() && this.cmp(this.heap[l], largest)) {
+      if (l < end && this.cmp(this.heap[l], largest)) {
         nxtIdx = l;
         largest = this.heap[l];
       }
-      if (r < this.size() && this.cmp(this.heap[r], largest)) {
+      if (r < end && this.cmp(this.heap[r], largest)) {
         nxtIdx = r;
         largest = this.heap[r];
       }

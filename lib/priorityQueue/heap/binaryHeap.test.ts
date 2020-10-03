@@ -3,18 +3,15 @@ import { BinaryHeap } from "./binaryHeap";
 
 test("BinaryHeap can be used to heapsort elements correctly", () => {
   for (let i = 0; i < 10; ++i) {
-    const origArr = [];
+    const origArr: number[] = [];
     for (let j = 0; j < randInt(1, 100); ++j) {
       origArr.push(Math.random());
     }
     const sortedArr = [...origArr];
     sortedArr.sort((a, b) => b - a);
 
-    const heap = new BinaryHeap();
+    const heap = new BinaryHeap({ arr: origArr });
     const heapSortedArr = [];
-    for (const el of origArr) {
-      heap.push(el);
-    }
     while (!heap.empty()) {
       heapSortedArr.push(heap.pop());
     }
