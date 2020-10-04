@@ -63,7 +63,7 @@ export class BinaryHeap<T> implements Heap<T> {
     if (this.empty()) {
       throw Error("Cannot pop from an empty heap.");
     }
-    const item = this.heap[0];
+    const item = this.top();
     this.heap[0] = this.heap[this.size() - 1];
     this.heap.pop();
     if (!this.empty()) {
