@@ -7,6 +7,5 @@ tslib_1.__exportStar(require("./deque"), exports);
 tslib_1.__exportStar(require("./linkedList"), exports);
 tslib_1.__exportStar(require("./monotonicQueue"), exports);
 tslib_1.__exportStar(require("./priorityQueue"), exports);
-tslib_1.__exportStar(require("./sortedMap"), exports);
 tslib_1.__exportStar(require("./algorithm"), exports);
 tslib_1.__exportStar(require("./math"), exports);
