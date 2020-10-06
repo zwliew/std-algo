@@ -6,3 +6,4 @@ export * from "./monotonicQueue";
 export * from "./priorityQueue";
 export * from "./algorithm";
 export * from "./math";
+export * from "./counter";
